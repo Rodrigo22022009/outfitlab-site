@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OutfitLab - Loja de Camisolas de Futebol</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">OutfitLab</div>
+    <nav>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#novidades">Novidades</a>
+      <a href="#promocoes">Promoções</a>
+      <a href="#contacto">Contacto</a>
+      <a href="admin/" class="admin-link">Admin</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Streetwear & Futebol com Estilo</h1>
+      <p>Descobre as camisolas e artigos mais exclusivos de clubes e seleções.</p>
+      <a href="#catalogo" class="cta">Ver Catálogo</a>
+    </section>
+    <section id="novidades" class="destaque">
+      <h2>Novidades</h2>
+      <div class="produtos" id="novidades-list"></div>
+    </section>
+    <section id="promocoes" class="destaque">
+      <h2>Promoções</h2>
+      <div class="produtos" id="promocoes-list"></div>
+    </section>
+    <section id="catalogo">
+      <h2>Catálogo</h2>
+      <div class="filtros">
+        <button onclick="filtrarCategoria('todas')">Todas</button>
+        <button onclick="filtrarCategoria('clubes')">Clubes</button>
+        <button onclick="filtrarCategoria('selecoes')">Seleções</button>
+        <button onclick="filtrarCategoria('novidades')">Novidades</button>
+        <button onclick="filtrarCategoria('promocoes')">Promoções</button>
+      </div>
+      <div class="produtos" id="catalogo-list"></div>
+    </section>
+    <section id="precos" class="destaque">
+      <h2>Preçário</h2>
+      <div id="precos-tabela"></div>
+    </section>
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p>Entra em contacto pelo Instagram:<br>
+        <a href="https://instagram.com/outfitlab.pt" target="_blank" style="font-size:1.2rem;font-weight:700;color:#fff200;">@outfitlab.pt</a>
+      </p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2026 OutfitLab. Todos os direitos reservados.</p>
+  </footer>
+  <div id="modal-produto" class="modal-produto-bg" style="display:none;">
+    <div class="modal-produto">
+      <button class="fechar-modal" onclick="fecharModalProduto()">&times;</button>
+      <div id="modal-produto-conteudo"></div>
+    </div>
+  </div>
+  <script>
+    // Aviso para funcionamento em file:// (pen/disco)
+    if (window.location.protocol === 'file:') {
+      const aviso = document.createElement('div');
+      aviso.style = 'position:fixed;top:0;left:0;width:100vw;padding:1.2rem 0;background:#ff5252;color:#fff;font-size:1.1rem;text-align:center;z-index:9999;font-weight:700;box-shadow:0 2px 8px #0005;';
+      aviso.innerHTML = 'Atenção: Para funcionar corretamente (guardar produtos, promoções, imagem, etc.), abre o site com o <b>Live Server</b> no VS Code, ou usa o <b>Firefox</b>. <br> No Chrome/Edge, funcionalidades como guardar produtos podem não funcionar em file://';
+      document.body.prepend(aviso);
+    }
+  </script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

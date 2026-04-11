@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OutfitLab Admin</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .admin-panel { max-width: 500px; margin: 3rem auto; background: #222; padding: 2rem; border-radius: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.2); }
+    .admin-panel h2 { color: #fff200; margin-bottom: 1.5rem; }
+    .admin-panel label { display: block; margin-top: 1rem; }
+    .admin-panel input, .admin-panel textarea { width: 100%; padding: 0.7rem; margin-top: 0.3rem; border-radius: 0.7rem; border: none; background: #18181b; color: #fff; }
+    .admin-panel button { margin-top: 1.5rem; background: #fff200; color: #18181b; border: none; padding: 0.9rem 2rem; border-radius: 1rem; font-weight: 700; cursor: pointer; transition: background 0.2s, color 0.2s; }
+    .admin-panel button:hover { background: #18181b; color: #fff200; border: 2px solid #fff200; }
+    .admin-lista { margin-top: 2rem; }
+    .admin-produto { background: #18181b; color: #fff; border-radius: 1rem; padding: 1rem; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center; }
+    .admin-produto span { font-weight: 700; }
+    .admin-produto button { background: #ff5252; color: #fff; border: none; border-radius: 0.7rem; padding: 0.5rem 1rem; cursor: pointer; font-weight: 700; }
+    .admin-produto button:hover { background: #fff200; color: #18181b; }
+  </style>
+</head>
+<body>
+  <div id="login-panel" class="admin-panel">
+    <h2>Login de Administrador</h2>
+    <form id="form-login">
+      <label>Utilizador <input type="text" id="login-user" required></label>
+      <label>Palavra-passe <input type="password" id="login-pass" required></label>
+      <button type="submit">Entrar</button>
+    </form>
+    <div id="login-erro" style="color:#ff5252;margin-top:1rem;"></div>
+  </div>
+  <div id="admin-panel" class="admin-panel" style="display:none;"></div>
+  <script>
+    // Aviso para funcionamento em file:// (pen/disco)
+    if (window.location.protocol === 'file:') {
+      const aviso = document.createElement('div');
+      aviso.style = 'position:fixed;top:0;left:0;width:100vw;padding:1.2rem 0;background:#ff5252;color:#fff;font-size:1.1rem;text-align:center;z-index:9999;font-weight:700;box-shadow:0 2px 8px #0005;';
+      aviso.innerHTML = 'Atenção: Para o painel admin funcionar corretamente (guardar produtos, promoções, imagem, etc.), abre o site com o <b>Live Server</b> no VS Code, ou usa o <b>Firefox</b>. <br> No Chrome/Edge, funcionalidades como guardar produtos podem não funcionar em file://';
+      document.body.prepend(aviso);
+    }
+  </script>
+  <script src="admin.js"></script>
+</body>
+</html>
